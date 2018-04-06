@@ -1,7 +1,7 @@
 var xPos, yPos, xDir;
 
 function setup() {
-  createCanvas(1000, 500);
+  createCanvas(window.innerWidth, window.innerHeight);
   xPos = 0;
   yPos = 10;
   xDir = 1;

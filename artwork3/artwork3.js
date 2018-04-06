@@ -2,7 +2,6 @@ var count = 0;
 
 function setup() {
  createCanvas(window.innerWidth, window.innerHeight);
- createCanvas(500, 500);
  background(0, 0, 0);
  stroke(255, 50);
 }

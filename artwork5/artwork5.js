@@ -1,19 +1,19 @@
-void drawFrog(int x, int y, int size) {  
+void drawFrog(int x, int y, int size) {
   noStroke();
 
   /*head*/
   fill(53, 182, 44);
-  ellipse(x, y-size/4.8, size/1.25, size/1.5); 
-  ellipse(x-size/4.8, y-size/2, size/4, size/4); 
-  ellipse(x+size/4.8, y-size/2, size/4, size/4); 
+  ellipse(x, y-size/4.8, size/1.25, size/1.5);
+  ellipse(x-size/4.8, y-size/2, size/4, size/4);
+  ellipse(x+size/4.8, y-size/2, size/4, size/4);
 
   /*body*/
-  ellipse(x, y+size/4, size, size); 
+  ellipse(x, y+size/4, size, size);
   fill(109, 200, 59);
   ellipse(x, y+size/3.7, size/1.6, size/1.5);
 
   /*legs*/
- 
+
   fill(53, 182, 44);
   bezier(x+size/2.4, y+size/80, x+size/1.1, y-size/12, x+size/1.85, y+size/1.5, x+size/2.4, y+size/1.5);
   bezier(x-size/2.4, y+size/80, x-size/1.1, y-size/12, x-size/1.85, y+size/1.5, x-size/2.4, y+size/1.5);
@@ -21,24 +21,24 @@ void drawFrog(int x, int y, int size) {
   rect(x-size/1.55, y+size/2, size/3, size/4.8, 100);
 
   /*eyes*/
-  fill(255); 
-  ellipse(x-size/4.8, y-size/2, size/6, size/6); 
-  ellipse(x+size/4.8, y-size/2, size/6, size/6); 
+  fill(255);
+  ellipse(x-size/4.8, y-size/2, size/6, size/6);
+  ellipse(x+size/4.8, y-size/2, size/6, size/6);
 
-  fill(0); 
-  ellipse(x-size/4.8, y-size/2, size/8, size/8); 
-  ellipse(x+size/4.8, y-size/2, size/8, size/8);   
+  fill(0);
+  ellipse(x-size/4.8, y-size/2, size/8, size/8);
+  ellipse(x+size/4.8, y-size/2, size/8, size/8);
 
-  ellipse(x-size/24, y-size/2.7, size/40, size/40); 
-  ellipse(x+size/24, y-size/2.7, size/40, size/40); 
+  ellipse(x-size/24, y-size/2.7, size/40, size/40);
+  ellipse(x+size/24, y-size/2.7, size/40, size/40);
 
-  fill(255); 
-  ellipse(x-size/5.3, y-size/1.9, size/40, size/40); 
-  ellipse(x+size/5.3, y-size/1.9, size/40, size/40); 
+  fill(255);
+  ellipse(x-size/5.3, y-size/1.9, size/40, size/40);
+  ellipse(x+size/5.3, y-size/1.9, size/40, size/40);
 
   /*cheek*/
-  fill(200, 0, 0); 
-  ellipse(x-size/4, y-size/3.9, size/4, size/4); 
+  fill(200, 0, 0);
+  ellipse(x-size/4, y-size/3.9, size/4, size/4);
   ellipse(x+size/4, y-size/3.9, size/4, size/4);
 
   /*mouth*/
@@ -46,7 +46,7 @@ void drawFrog(int x, int y, int size) {
   stroke(0);
   strokeWeight(size/55);
   arc(x, y-size/3.5, size/3, size/4, 0, PI);
-} 
+}
 
 void drawRyan(int x, int y) {
   //background(255);
@@ -58,7 +58,7 @@ void drawRyan(int x, int y) {
 
 void drawRyanFace(int x, int y) {
   color black = color(0, 0, 0);
-  color orange = color(239,166,39);  
+  color orange = color(239,166,39);
   fill(orange);
   stroke(black);
   strokeWeight(5);
@@ -91,32 +91,32 @@ void drawRyanBody(int x, int y) {
   color orange = color(239,166,39);
 
   fill(orange);
-  
+
   //legs
   stroke(black);
   ellipse(x + 34, y + 200, 54, 103);
   ellipse(x + -34, y + 200, 54, 103);
-  
+
   //body
   stroke(orange);
   rect(x - 64, y + 61, 128, 131);
-  
+
   stroke(black);
-  
+
   //arms
   bezier(x - 65, y + 82, x - 82, y + 102, x - 104, y + 185, x - 66, y + 192);
   bezier(x + 65, y + 82, x + 82, y + 102, x + 104, y + 175, x + 66, y + 192);
-  
+
   //make lines
   line(x + 61, y + 126, x + 61, y + 195);
   line(x - 61, y + 126, x - 61, y + 195);
   line(x + 14, y + 195, x - 14, y + 195);
-   
+
   //stomach
   stroke(white);
   fill(white);
   ellipse(x, y + 145, 65, 65);
-  
+
   noStroke();
   fill(orange);
   triangle(x + -10, y + 125, x + -20, y + 110, x + 0, y + 110);
@@ -126,7 +126,7 @@ void drawRyanBody(int x, int y) {
 
 void drawRabbit(int x, int y, int size, int height) {
 //face
-  fill(255, 200, 200); 
+  fill(255, 200, 200);
   ellipse(x, y, size, height);
   fill(0);
   ellipse(x-20, y-5, size/8, height/8);
@@ -139,7 +139,7 @@ void drawRabbit(int x, int y, int size, int height) {
   ellipse(x+25, y-50, size/8*3, height/8*7);
   fill(255);
   ellipse(x-25, y-50, size/8, height/8*5);
-  ellipse(x+25, y-50, size/8, height/8*5); 
+  ellipse(x+25, y-50, size/8, height/8*5);
 
 //body
   fill(255, 200, 200);
@@ -166,24 +166,24 @@ void drawRabbit(int x, int y, int size, int height) {
 }
 
 
-void drawManbo(int x, int y, int size){ 
+void drawManbo(int x, int y, int size){
 /* x= x position
    y= y position
    size= size
    */
   strokeWeight(size*0.007);
- 
+
   //ear
   fill(0,100,105);
   arc(x-size*0.2,y-size*0.6,size*0.3,size*0.24,radians(274.4),radians(339));
   arc(x+size*0.2,y-size*0.6,size*0.3,size*0.24,radians(201),radians(265.8));
   arc(x,y-size*0.62,size*0.45,size*0.4,radians(172.5),radians(210));
   arc(x,y-size*0.62,size*0.45,size*0.4,radians(330.5),radians(367.5));
- 
+
   //arm
   ellipse(x,y+size*0.04,size*1.16,size*0.4);
   arc(x,y+size*0.2,size*1.22,size*1.15,radians(200),radians(340));
- 
+
   //head
 ellipse(x,y-0.48*size,size*0.55,size*0.4);
 
@@ -193,23 +193,23 @@ ellipse(x,y-0.48*size,size*0.55,size*0.4);
   ellipse(x, y-0.42*size,size*0.40,size*0.30);
   fill(0,100,105);
   arc(x,y-0.65*size,size*0.2,size*0.2,radians(20),radians(160));
- 
+
  //eye
  strokeWeight(size*0.007);
  stroke(0);
  line(x-size*0.15,y-size*0.495,x-size*0.07,y-size*0.505);
  line(x+size*0.15,y-size*0.495,x+size*0.07,y-size*0.505);
- 
+
  //tooth
  noFill();
  arc(x,y-0.45*size,size*0.12,size*0.1,radians(189),radians(210));
  arc(x-size*0.102,y-0.45*size,size*0.13,size*0.1,radians(330),radians(350));
  arc(x,y-0.45*size,size*0.12,size*0.1,radians(330),radians(351));
  arc(x+size*0.102,y-0.45*size,size*0.13,size*0.1,radians(190),radians(210));
- 
+
  //mouse
  arc(x,y,size,size*0.92,radians(263),radians(277));
- 
+
   //body
   stroke(0);
   fill(0,100,105);
@@ -220,14 +220,14 @@ ellipse(x,y-size*0.02, size*0.98,size*0.75);
   arc(x,y, size,size*0.79,radians(230), radians(310));
   arc(x,y-size*0.353,size,size*0.9,radians(48),radians(133));
   arc(x-size*0.11,y-size*0.105,size*0.9,size*1.2,radians(340.8),radians(368));
-  arc(x+size*0.105,y-size*0.105,size*0.9,size*1.2,radians(172),radians(199)); 
+  arc(x+size*0.105,y-size*0.105,size*0.9,size*1.2,radians(172),radians(199));
   fill(0,100,105);
   arc(x,y+0.15*size,size*0.5,size*0.25,radians(222),radians(318));
   noStroke();
   arc(x,y+0.15*size,size*0.5-size*0.007,size*0.25-size*0.007,radians(180),radians(360));
   ellipse(x,y+0.15*size,size*0.3,size*0.2);
-  
- //foot 
+
+ //foot
   stroke(0);
   fill(255,245,220);
   ellipse(x-size*0.29,y+size*0.3,size*0.38,size*0.3);
@@ -235,7 +235,7 @@ ellipse(x,y-size*0.02, size*0.98,size*0.75);
   fill(170,117,87);
   ellipse(x-size*0.29,y+size*0.3,size*0.18,size*0.13);
   ellipse(x+size*0.29,y+size*0.3,size*0.18,size*0.13);
-  
+
   //lettering?
   strokeWeight(size*0.013);
   line(x-size*0.45,y-size*0.48,x-size*0.38,y-size*0.48);
@@ -260,7 +260,7 @@ void drawCloud(int x,int y,int z,int w,int k)
 
 void drawLion(int x, int y, int a, int b){
   //background(255);
- 
+
   //hair
   fill(220,120,0);
   triangle(x-50,y-110,x,y-160,x-60,y-180);
@@ -317,16 +317,16 @@ void drawSun(int x,int y,int size, int line, int weight) {
 }
 
 void setup() {
-  size(1000, 1000);
+  createCanvas(window.innerWidth, window.innerHeight);
   color green = color(102, 255, 102);
   color sky = color(153, 225, 255);
-  
+
   noStroke();
   fill(sky);
   rect(0, 0, width, 2 * height / 3);
-  
+
   drawSun(950, 50, 100, 1000,1);
-  
+
   fill(green);
   rect(0, 2 * height / 3, width, height / 3);
   drawCloud(100, 100, 200, 100, 240);
@@ -334,19 +334,19 @@ void setup() {
   drawCloud(500, 50, 150, 100, 250);
   drawCloud(800, 400, 100, 50, 230);
   drawCloud(200, 350, 150, 100, 230);
-  
+
   drawRyan(500, 450);
 
   drawFrog(700, 700, 50);
   drawFrog(50, 800, 50);
   drawFrog(40, 650, 50);
   drawFrog(600, 750, 50);
-  
+
   noStroke();
   drawRabbit(300, 650, 80, 80);
-  
+
   drawManbo(850,700, 200);
-  
+
   stroke(10);
   drawLion(150, 600,70,100);
 }

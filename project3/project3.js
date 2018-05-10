@@ -1,29 +1,59 @@
-var circles = [];
+var mass = [];
+var posX = [];
+var posY = [];
+var velocityX = [];
+var velocityY = [];
+var colors = [];
+var diameter = [];
 
 function setup() {
-  createCanvas(windowWidth, windowHeight); 
+  createCanvas(windowWidth, windowHeight);
 }
+
 function draw() {
   background(40, 0, 0);
-  for(i = 0; i < circles.length; i++) {
-    drawCircle(circles[i]);
+  
+  for (var i = 0; i < mass.length; i++) {
+    var accelerationX = 0, accelerationY = 0;
+    
+    for (var j = 0; j < mass.length; j++) {
+      if (i != j) {
+        var distX = posX[j] - posX[i];
+        var distY = posY[j] - posY[i];
+
+        var dist = sqrt(distX * distX + distY * distY);
+        if (dist < 1) dist = 1;
+
+        var force = (dist - 500) * mass[j] / dist;
+        accelerationX += force * distX;
+        accelerationY += force * distY;
+      }
+    }
+    
+    velocityX[i] = velocityX[i] * 0.5 + accelerationX * mass[i];
+    velocityY[i] = velocityY[i] * 0.5 + accelerationY * mass[i];
+  }
+  
+  for (var k = 0; k < mass.length; k++) {
+    posX[k] += velocityX[k];
+    posY[k] += velocityY[k];
+    
+    noStroke();
+    fill(colors[k]);
+    ellipse(posX[k], posY[k], diameter[k], diameter[k]);
   }
 }
 
-function setCircles() {
-  circles.push({
-    posX: mouseX,
-    posY: mouseY,
-    radius: int(random(10, height / 6)),
-    col: color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), int(random(0, 255)))
-  });
+function addCircles() {
+  mass.push(random(0.003, 0.03));
+  posX.push(mouseX);
+  posY.push(mouseY);
+  velocityX.push(0);
+  velocityY.push(0);
+  colors.push(color(int(random(0, 255)), int(random(0, 255)), int(random(0, 255)), int(random(0, 255))));
+  diameter.push(int(random(20, height / 4)));
 }
 
-function drawCircle(circle) {
-  fill(circle.col);
-  ellipse(circle.posX, circle.posY, circle.radius * 2, circle.radius * 2);
-}
-
-function mousePressed() {
-  setCircles();
+function mouseClicked() {
+  addCircles();
 }

@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(40, 0, 0);
+  background(240,248,255);
   
   for (var i = 0; i < mass.length; i++) {
     var accelerationX = 0, accelerationY = 0;
@@ -39,6 +39,9 @@ function draw() {
     posY[k] += velocityY[k];
     
     noStroke();
+    
+    ellipse(posX[k], posY[k], diameter[k] + 10, diameter[k] + 10);
+    
     fill(colors[k]);
     ellipse(posX[k], posY[k], diameter[k], diameter[k]);
   }
